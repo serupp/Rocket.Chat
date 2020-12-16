@@ -37,13 +37,13 @@ const Avatar: FC = (props: any) => <Button width='x36' {...props}/>;
 
 const HeaderDivider: FC = () => <Divider { ...{ mbs: 'neg-x2', mbe: 0 } as any} />;
 
-const Header: FC & { ToolBoxAction: FC } = (props: any) => <Box rcx-room-header is='header' height='x64' display='flex' justifyContent='center' flexDirection='column' overflow='hidden' flexShrink={0}>
+const Header: FC & { ToolBoxAction: FC, Badge: FC } = (props: any) => <Box rcx-room-header is='header' height='x64' display='flex' justifyContent='center' flexDirection='column' overflow='hidden' flexShrink={0}>
 	<Box mi='neg-x4' height='x64' pi='x24' display='flex' flexGrow={1} justifyContent='center' alignItems='center' overflow='hidden' flexDirection='row' {...props}/>
 	<HeaderDivider/>
 </Box>;
 
-ToolBoxAction.Badge = ToolBoxActionBadge;
 Header.ToolBoxAction = ToolBoxAction;
+Header.Badge = ToolBoxActionBadge;
 
 export default Header;
 
